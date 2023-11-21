@@ -1,5 +1,26 @@
-template-repository (1.0-1) unstable; urgency=medium
+pastel (0.2.1-2) unstable; urgency=medium
 
-  * Initial release
+  * d/tests/control: Add python3-all as dependency in autopkgtest
+    (Closes: #1001365).
+  * Run wrap-and-sort.
+  * d/control: Add <!nocheck> profile to b-depends used in tests.
+  * d/contorl: Bump Standards-Version to 4.6.0.1.
+  * d/salsa-ci.yml: Remove no need comments template from the file.
+  * d/control: Add DPT as Maintainer.
+    - Set me as Uploaders.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Fri, 10 Dec 2021 10:00:24 -0300
+
+pastel (0.2.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * No change source-only upload for testing migration.
+    (Closes: #980941)
+
+ -- Boyuan Yang <byang@debian.org>  Sun, 24 Jan 2021 12:49:39 -0500
+
+pastel (0.2.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #977741).
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sat, 19 Dec 2020 18:22:55 -0300

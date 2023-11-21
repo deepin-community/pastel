@@ -1,0 +1,43 @@
+From: Emmanuel Arias <eamanu@yaerobi.com>
+Date: Sat, 19 Dec 2020 19:26:58 -0300
+Subject: Add setup.py to build cleo
+
+Upstream build project using poetry. So, add setup.py to build on
+Debian. This patch must be removed after poetry packaging in Debian.
+---
+ setup.py | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+ create mode 100644 setup.py
+
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..dbc6b94
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,26 @@
++# -*- coding: utf-8 -*-
++from setuptools import setup
++
++packages = \
++['pastel', 'tests']
++
++package_data = \
++{'': ['*']}
++
++setup_kwargs = {
++    'name': 'pastel',
++    'version': '0.2.1',
++    'description': 'Bring colors to your terminal.',
++    'long_description': "Pastel: Bring colors to your terminal\n#####################################\n\nPastel is a simple library to help you colorize strings in your terminal.\n\nIt comes bundled with predefined styles:\n\n* ``info``: green\n* ``comment``: yellow\n* ``question``: black on cyan\n* ``error``: white on red\n\n.. image:: https://raw.githubusercontent.com/sdispater/pastel/master/assets/screenshot.png\n\n\nFeatures\n========\n\n* Use predefined styles or add you own.\n* Disable colors all together by calling ``with_colors(False)``.\n* Automatically disables colors if the output is not a TTY.\n* Used in `cleo <https://github.com/sdispater/cleo>`_.\n* Supports Python **2.7+**, **3.5+** and **PyPy**.\n\n\nUsage\n=====\n\n.. code-block:: python\n\n    >>> import pastel\n    >>> print(pastel.colorize('<info>Information</info>'))\n    'Information'  # Green string by default\n    >>> print(pastel.colorize('<fg=red;options=bold>This is bold red</>'))\n    'This is bold red'\n\n\nInstallation\n============\n\n.. code-block::\n\n    pip install pastel\n",
++    'author': 'Sébastien Eustace',
++    'author_email': 'sebastien@eustace.io',
++    'maintainer': None,
++    'maintainer_email': None,
++    'url': 'https://github.com/sdispater/pastel',
++    'packages': packages,
++    'package_data': package_data,
++    'python_requires': '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
++}
++
++
++setup(**setup_kwargs)
